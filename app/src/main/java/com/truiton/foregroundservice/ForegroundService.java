@@ -51,8 +51,9 @@ public class ForegroundService extends Service {
 
             Intent previousIntent = new Intent(this, ForegroundService.class);
             previousIntent.setAction(Constants.ACTION.PREV_ACTION);
-            PendingIntent ppreviousIntent = PendingIntent.getService(this, 0,
-                    previousIntent, 0);
+            PendingIntent ppreviousIntent = PendingIntent.getService(
+                    this, 0, previousIntent, 0
+            );
 
             Intent playIntent = new Intent(this, ForegroundService.class);
             playIntent.setAction(Constants.ACTION.PLAY_ACTION);
@@ -107,7 +108,6 @@ public class ForegroundService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        // Used only in case of bound services.
         return null;
     }
 }
